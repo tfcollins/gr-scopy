@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<block>
+  <name>Analog Source</name>
+  <key>scopy_analog_source</key>
+  <category>[scopy]</category>
+  <import>import scopy</import>
+  <make>scopy.analog_source($uri, $channels, $buffer_size)</make>
+
+  <param>
+		<name>IIO context URI</name>
+		<key>uri</key>
+		<value>local:</value>
+		<type>string</type>
+	</param>
+
+  <param>
+		<name>Channels</name>
+		<key>channels</key>
+		<value>[]</value>
+		<type>raw</type>
+	</param>
+
+  <param>
+		<name>Buffer size</name>
+		<key>buffer_size</key>
+		<value>0x8000</value>
+		<type>int</type>
+	</param>
+
+  <source>
+		<name>out</name>
+		<type>float</type>
+		<nports>len($channels)</nports>
+	</source>
+
+</block>
